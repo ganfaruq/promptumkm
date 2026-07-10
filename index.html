@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>50 Prompt UMKM | Cuanify ID</title>
+  <meta name="description" content="Kumpulan 50 prompt gambar siap pakai untuk membantu UMKM membuat konten produk yang lebih menarik." />
+  <style>
+    :root{
+      --purple:#6d35d9;
+      --purple-dark:#24113f;
+      --purple-soft:#f0e9ff;
+      --yellow:#ffd84d;
+      --white:#ffffff;
+      --black:#17131c;
+      --gray:#6f6878;
+      --border:#1f1828;
+      --success:#1f9d55;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(109,53,217,.18), transparent 30%),
+        linear-gradient(180deg, #fbf9ff 0%, #ffffff 100%);
+      color:var(--black);
+      line-height:1.6;
+    }
+
+    .page{
+      width:min(100%, 720px);
+      margin:0 auto;
+      padding:24px 16px 56px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--yellow);
+      color:var(--black);
+      border:2px solid var(--border);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      box-shadow:4px 4px 0 var(--border);
+      margin-bottom:20px;
+    }
+
+    .hero{
+      background:var(--purple-dark);
+      color:var(--white);
+      padding:34px 24px;
+      border:3px solid var(--border);
+      border-radius:26px;
+      box-shadow:10px 10px 0 var(--yellow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+    }
+
+    .hero:before{
+      width:180px;
+      height:180px;
+      right:-70px;
+      top:-60px;
+    }
+
+    .hero:after{
+      width:120px;
+      height:120px;
+      left:-45px;
+      bottom:-45px;
+    }
+
+    .hero h1{
+      font-size:clamp(36px, 9vw, 64px);
+      line-height:1;
+      margin-bottom:18px;
+      letter-spacing:-2px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero h1 span{
+      color:var(--yellow);
+    }
+
+    .hero p{
+      font-size:17px;
+      color:#eee8f8;
+      max-width:590px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-points{
+      margin-top:24px;
+      display:grid;
+      gap:10px;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-point{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:14px;
+      padding:12px 14px;
+      font-weight:700;
+    }
+
+    .section{
+      margin-top:30px;
+    }
+
+    .section-title{
+      font-size:28px;
+      line-height:1.2;
+      margin-bottom:14px;
+    }
+
+    .section-subtitle{
+      color:var(--gray);
+      margin-bottom:18px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+    }
+
+    .card{
+      background:var(--white);
+      border:2px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:5px 5px 0 var(--purple-soft);
+    }
+
+    .card strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:16px;
+    }
+
+    .card p{
+      color:var(--gray);
+      font-size:14px;
+    }
+
+    .form-wrap{
+      background:var(--white);
+      border:3px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:9px 9px 0 var(--purple);
+    }
+
+    .form-note{
+      background:var(--purple-soft);
+      border:1px dashed var(--purple);
+      border-radius:14px;
+      padding:12px 14px;
+      margin-bottom:18px;
+      font-size:14px;
+    }
+
+    .field{
+      margin-bottom:16px;
+    }
+
+    label{
+      display:block;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    input,
+    select{
+      width:100%;
+      border:2px solid #cfc7d8;
+      border-radius:13px;
+      padding:14px 15px;
+      font-size:16px;
+      outline:none;
+      background:#fff;
+    }
+
+    input:focus,
+    select:focus{
+      border-color:var(--purple);
+      box-shadow:0 0 0 4px rgba(109,53,217,.12);
+    }
+
+    button{
+      width:100%;
+      border:2px solid var(--border);
+      border-radius:14px;
+      padding:15px 18px;
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+      background:var(--yellow);
+      color:var(--black);
+      box-shadow:5px 5px 0 var(--border);
+      transition:.15s ease;
+    }
+
+    button:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:7px 7px 0 var(--border);
+    }
+
+    button:disabled{
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none;
+    }
+
+    .small{
+      color:var(--gray);
+      font-size:13px;
+      text-align:center;
+      margin-top:14px;
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--gray);
+      font-size:13px;
+      margin-top:34px;
+    }
+
+    .toast{
+      display:none;
+      margin-top:14px;
+      border-radius:12px;
+      padding:12px 14px;
+      font-weight:700;
+    }
+
+    .toast.success{
+      display:block;
+      color:#0d5f32;
+      background:#dcfce7;
+      border:1px solid #86efac;
+    }
+
+    .toast.error{
+      display:block;
+      color:#8a1c1c;
+      background:#fee2e2;
+      border:1px solid #fca5a5;
+    }
+
+    @media(max-width:560px){
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding:28px 20px;
+      }
+
+      .form-wrap{
+        padding:20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="badge">Produk Cuanify ID</div>
+
+      <h1>50 PROMPT <span>UMKM</span></h1>
+
+      <p>
+        Kumpulan prompt gambar siap pakai untuk membantu pemilik UMKM membuat visual produk yang lebih menarik, tanpa harus jago desain.
+      </p>
+
+      <div class="hero-points">
+        <div class="hero-point">✅ Cocok untuk makanan, minuman, jasa, dan produk lokal</div>
+        <div class="hero-point">✅ Tinggal salin prompt, ubah nama produk, lalu buat gambarnya</div>
+        <div class="hero-point">✅ Membantu konten UMKM terlihat lebih profesional</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Tidak perlu bingung mau bikin gambar apa</h2>
+      <p class="section-subtitle">
+        Di dalamnya sudah tersedia berbagai ide prompt yang bisa langsung disesuaikan dengan produk jualan.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <strong>Prompt Poster Produk</strong>
+          <p>Untuk membuat poster jualan yang lebih mencolok dan mudah dipahami.</p>
+        </div>
+
+        <div class="card">
+          <strong>Prompt Konten Media Sosial</strong>
+          <p>Untuk membantu membuat visual Instagram, WhatsApp, dan konten promosi.</p>
+        </div>
+
+        <div class="card">
+          <strong>Prompt Berbagai Jenis UMKM</strong>
+          <p>Bisa digunakan untuk makanan, minuman, jasa, toko, dan usaha rumahan.</p>
+        </div>
+
+        <div class="card">
+          <strong>Mudah Dipakai Pemula</strong>
+          <p>Tidak perlu menyusun prompt dari awal. Tinggal salin dan sesuaikan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-wrap" id="daftar">
+      <h2 class="section-title">Isi data pendaftaran</h2>
+
+      <p class="section-subtitle">
+        Setelah formulir dikirim, kakak akan langsung diarahkan ke WhatsApp untuk melanjutkan proses pendaftaran.
+      </p>
+
+      <div class="form-note">
+        Pastikan email dan nomor WhatsApp aktif serta ditulis dengan benar.
+      </div>
+
+      <form id="registrationForm">
+        <div class="field">
+          <label for="nama">Nama lengkap</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Contoh: Siti Rahma"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Contoh: nama@email.com"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="whatsapp">Nomor WhatsApp</label>
+          <input
+            type="tel"
+            id="whatsapp"
+            name="whatsapp"
+            placeholder="Contoh: 081234567890"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="pembayaran">Metode pembayaran</label>
+          <select id="pembayaran" name="pembayaran" required>
+            <option value="">Pilih bank transfer</option>
+            <option value="BCA 1481034260 a.n. Vini">BCA 1481034260 a.n. Vini</option>
+            <option value="MANDIRI 1770018657723 a.n. Vini">MANDIRI 1770018657723 a.n. Vini</option>
+          </select>
+        </div>
+
+        <button type="submit" id="submitBtn">
+          DAFTAR DAN LANJUT KE WHATSAPP
+        </button>
+
+        <div id="toast" class="toast"></div>
+
+        <p class="small">
+          Setelah data dikirim, kakak akan diarahkan ke WhatsApp untuk melanjutkan pembayaran.
+        </p>
+      </form>
+    </section>
+
+    <footer class="footer">
+      © 2026 Cuanify ID. Semua hak dilindungi.
+    </footer>
+  </main>
+
+  <script>
+    /*
+      CARA MENGHUBUNGKAN KE GOOGLE FORM:
+
+      1. Buat Google Form dengan kolom:
+         - Nama lengkap
+         - Email
+         - Nomor WhatsApp
+         - Metode pembayaran
+         - Status
+
+      2. Klik menu titik tiga di Google Form.
+      3. Pilih "Dapatkan link yang sudah terisi".
+      4. Isi contoh data, lalu salin link.
+      5. Ambil FORM_ID dan entry ID dari link tersebut.
+      6. Ganti konfigurasi di bawah ini.
+    */
+
+    const GOOGLE_FORM_ACTION =
+      "https://docs.google.com/forms/d/e/GANTI_FORM_ID/formResponse";
+
+    const GOOGLE_FORM_FIELDS = {
+      nama: "entry.GANTI_ENTRY_NAMA",
+      email: "entry.GANTI_ENTRY_EMAIL",
+      whatsapp: "entry.GANTI_ENTRY_WHATSAPP",
+      pembayaran: "entry.GANTI_ENTRY_PEMBAYARAN",
+      status: "entry.GANTI_ENTRY_STATUS"
+    };
+
+    const WHATSAPP_NUMBER = "6281237523626";
+
+    const form = document.getElementById("registrationForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const toast = document.getElementById("toast");
+
+    function normalizeWhatsApp(number) {
+      let clean = number.replace(/\D/g, "");
+
+      if (clean.startsWith("0")) {
+        clean = "62" + clean.substring(1);
+      }
+
+      if (!clean.startsWith("62")) {
+        clean = "62" + clean;
+      }
+
+      return clean;
+    }
+
+    function showToast(message, type) {
+      toast.className = "toast " + type;
+      toast.textContent = message;
+    }
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const whatsappRaw = document.getElementById("whatsapp").value.trim();
+      const whatsapp = normalizeWhatsApp(whatsappRaw);
+      const pembayaran = document.getElementById("pembayaran").value;
+      const produk = "50 PROMPT UMKM";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "MENYIMPAN DATA...";
+
+      const googleFormData = new URLSearchParams();
+      googleFormData.append(GOOGLE_FORM_FIELDS.nama, nama);
+      googleFormData.append(GOOGLE_FORM_FIELDS.email, email);
+      googleFormData.append(GOOGLE_FORM_FIELDS.whatsapp, whatsapp);
+      googleFormData.append(GOOGLE_FORM_FIELDS.pembayaran, pembayaran);
+      googleFormData.append(GOOGLE_FORM_FIELDS.status, "PENDING");
+
+      try {
+        await fetch(GOOGLE_FORM_ACTION, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          body: googleFormData.toString()
+        });
+
+        showToast(
+          "Data berhasil dicatat. Kakak akan diarahkan ke WhatsApp.",
+          "success"
+        );
+
+        const message = [
+          "Halo Teh Vini, saya sudah mengisi formulir pendaftaran.",
+          "",
+          "Produk: " + produk,
+          "Nama: " + nama,
+          "Email: " + email,
+          "Nomor WA: " + whatsapp,
+          "Metode pembayaran: " + pembayaran,
+          "",
+          "Saya ingin melanjutkan pendaftaran 50 PROMPT UMKM."
+        ].join("
+");
+
+        const whatsappUrl =
+          "https://wa.me/" +
+          WHATSAPP_NUMBER +
+          "?text=" +
+          encodeURIComponent(message);
+
+        setTimeout(function() {
+          window.location.href = whatsappUrl;
+        }, 700);
+
+      } catch (error) {
+        showToast(
+          "Data belum berhasil dikirim. Silakan coba kembali.",
+          "error"
+        );
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "DAFTAR DAN LANJUT KE WHATSAPP";
+      }
+    });
+  </script>
+</body>
+</html>
