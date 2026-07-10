@@ -403,33 +403,8 @@
   </main>
 
   <script>
-    /*
-      CARA MENGHUBUNGKAN KE GOOGLE FORM:
-
-      1. Buat Google Form dengan kolom:
-         - Nama lengkap
-         - Email
-         - Nomor WhatsApp
-         - Metode pembayaran
-         - Status
-
-      2. Klik menu titik tiga di Google Form.
-      3. Pilih "Dapatkan link yang sudah terisi".
-      4. Isi contoh data, lalu salin link.
-      5. Ambil FORM_ID dan entry ID dari link tersebut.
-      6. Ganti konfigurasi di bawah ini.
-    */
-
-    const GOOGLE_FORM_ACTION =
-      "https://docs.google.com/forms/d/e/GANTI_FORM_ID/formResponse";
-
-    const GOOGLE_FORM_FIELDS = {
-      nama: "entry.GANTI_ENTRY_NAMA",
-      email: "entry.GANTI_ENTRY_EMAIL",
-      whatsapp: "entry.GANTI_ENTRY_WHATSAPP",
-      pembayaran: "entry.GANTI_ENTRY_PEMBAYARAN",
-      status: "entry.GANTI_ENTRY_STATUS"
-    };
+    const APPS_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwZdaT9EHnHMU9miEVAYbLEZQh_SmUN_Zz7DslUoNGn5xQOfGsxAZbQ_rSa3mUnxfgclA/exec";
 
     const WHATSAPP_NUMBER = "6281237523626";
 
@@ -469,22 +444,27 @@
       submitBtn.disabled = true;
       submitBtn.textContent = "MENYIMPAN DATA...";
 
-      const googleFormData = new URLSearchParams();
-      googleFormData.append(GOOGLE_FORM_FIELDS.nama, nama);
-      googleFormData.append(GOOGLE_FORM_FIELDS.email, email);
-      googleFormData.append(GOOGLE_FORM_FIELDS.whatsapp, whatsapp);
-      googleFormData.append(GOOGLE_FORM_FIELDS.pembayaran, pembayaran);
-      googleFormData.append(GOOGLE_FORM_FIELDS.status, "PENDING");
+      const payload = {
+        nama: nama,
+        email: email,
+        whatsapp: whatsapp,
+        pembayaran: pembayaran
+      };
 
       try {
-        await fetch(GOOGLE_FORM_ACTION, {
+        const response = await fetch(APPS_SCRIPT_URL, {
           method: "POST",
-          mode: "no-cors",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+            "Content-Type": "text/plain;charset=utf-8"
           },
-          body: googleFormData.toString()
+          body: JSON.stringify(payload)
         });
+
+        const result = await response.json();
+
+        if (!result.success) {
+          throw new Error(result.message || "Data belum berhasil disimpan.");
+        }
 
         showToast(
           "Data berhasil dicatat. Kakak akan diarahkan ke WhatsApp.",
@@ -494,6 +474,7 @@
         const message = [
           "Halo Teh Vini, saya sudah mengisi formulir pendaftaran.",
           "",
+          "ID Pendaftaran: " + result.id,
           "Produk: " + produk,
           "Nama: " + nama,
           "Email: " + email,
